@@ -1,0 +1,1 @@
+/home/george/.scripts/autostart.sh

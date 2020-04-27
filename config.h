@@ -1,3 +1,5 @@
+#include <X11/XF86keysym.h>
+
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
@@ -65,9 +67,9 @@ static const char *mute[] =       { "amixer", "set", "Master", "toggle", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,			XK_F11,	   spawn,	   {.v = volumeup } },
-	{ MODKEY,			XK_F10,    spawn,	   {.v = volumedown} },
-	{ MODKEY,			XK_F9,	   spawn,	   {.v = mute } },
+	{ 0, 	  XF86XK_AudioRaiseVolume,	   spawn,	   {.v = volumeup } },
+	{ 0,	       XF86XK_AudioLowerVolume,    spawn,	   {.v = volumedown} },
+	{ 0,		 XF86XK_AudioMute,	   spawn,	   {.v = mute } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
